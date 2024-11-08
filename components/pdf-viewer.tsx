@@ -14,7 +14,7 @@ export function PDFViewer({ subject }: PDFViewerProps) {
   const downloadUrl = getDownloadUrl(subject.link);
 
   return (
-    <div className="h-[calc(100vh-270px)] flex flex-col">
+    <div className="h-[calc(100vh-270px)] flex flex-col px-24">
       <div className="flex-grow bg-background rounded-lg overflow-hidden border">
         <iframe
           src={embedUrl}
