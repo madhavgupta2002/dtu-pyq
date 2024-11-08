@@ -36,7 +36,7 @@ export default function Home() {
   }, {} as GroupedSubjects);
 
   return (
-    <div className="min-h-screen bg-background px-40">
+    <div className="min-h-screen bg-background px-4 sm:px-40">
       <header className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-4">
