@@ -2,7 +2,7 @@
 
 A modern web application that provides easy access to Delhi Technological University's Previous Year Question (PYQ) solutions. Access it at [dtu-pyq.vercel.app](https://dtu-pyq.vercel.app)
 
-![DTU PYQ Solutions](https://dtu-pyq.vercel.app/)
+
 ![image](https://github.com/user-attachments/assets/ec47b41a-1575-456e-89fe-8b75a66cd231)
 
 ## Features
