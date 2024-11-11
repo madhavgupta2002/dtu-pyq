@@ -5,12 +5,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getEmbedUrl(url: string): string {
+export function getEmbedUrl(url: string | undefined): string {
+  if (!url) return '';
   const fileId = url.match(/\/d\/(.*?)\/view/)?.[1];
-  return `https://drive.google.com/file/d/${fileId}/preview`;
+  return fileId ? `https://drive.google.com/file/d/${fileId}/preview` : '';
 }
 
-export function getDownloadUrl(url: string): string {
+export function getDownloadUrl(url: string | undefined): string {
+  if (!url) return '';
   const fileId = url.match(/\/d\/(.*?)\/view/)?.[1];
-  return `https://drive.google.com/uc?export=download&id=${fileId}`;
+  return fileId ? `https://drive.google.com/uc?export=download&id=${fileId}` : '';
 }

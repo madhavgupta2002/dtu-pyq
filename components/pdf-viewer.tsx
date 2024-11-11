@@ -1,48 +1,76 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Download, FileText } from "lucide-react";
+import { Download, FileText, Beaker } from "lucide-react";
 import { Subject } from "@/lib/types";
 import { getEmbedUrl, getDownloadUrl } from "@/lib/utils";
 
 interface PDFViewerProps {
   subject: Subject & { code: string };
+  type: 'pyq' | 'lab';
 }
 
-export function PDFViewer({ subject }: PDFViewerProps) {
-  const embedUrl = getEmbedUrl(subject.link);
-  const downloadUrl = getDownloadUrl(subject.link);
+export function PDFViewer({ subject, type }: PDFViewerProps) {
+  const embedUrl = getEmbedUrl(subject?.link);
+  const downloadUrl = getDownloadUrl(subject?.link);
+
+  if (!subject || !subject.link) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center text-muted-foreground">
+        {type === 'pyq' ? (
+          <FileText className="h-24 w-24 mb-6 opacity-50" />
+        ) : (
+          <Beaker className="h-24 w-24 mb-6 opacity-50" />
+        )}
+        <p className="text-xl">No {type === 'pyq' ? 'PYQ' : 'lab manual'} available</p>
+      </div>
+    );
+  }
 
   return (
     <div className="h-[calc(100vh-270px)] flex flex-col sm:px-24">
       <div className="flex-grow bg-background rounded-lg overflow-hidden border">
-        <iframe
-          src={embedUrl}
-          className="w-full h-full"
-          allow="autoplay"
-          loading="lazy"
-          sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"
-        ></iframe>
+        {embedUrl ? (
+          <iframe
+            src={embedUrl}
+            className="w-full h-full"
+            allow="autoplay"
+            loading="lazy"
+            sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"
+          ></iframe>
+        ) : (
+          <div className="h-full flex items-center justify-center text-muted-foreground">
+            Unable to load PDF viewer
+          </div>
+        )}
       </div>
       <div className="mt-4 flex items-center justify-between p-4 rounded-lg bg-secondary">
         <div className="flex items-start gap-3">
-          <FileText className="h-5 w-5 mt-1 text-primary" />
+          {type === 'pyq' ? (
+            <FileText className="h-5 w-5 mt-1 text-primary" />
+          ) : (
+            <Beaker className="h-5 w-5 mt-1 text-primary" />
+          )}
           <div>
             <h3 className="font-semibold">{subject.name}</h3>
-            <p className="text-sm text-muted-foreground">Cutoff: {subject.cutoff}</p>
+            {type === 'pyq' && subject.cutoff && (
+              <p className="text-sm text-muted-foreground">Cutoff: {subject.cutoff}</p>
+            )}
+            {type === 'lab' && subject.type && (
+              <p className="text-sm text-muted-foreground">Type: {subject.type}</p>
+            )}
           </div>
         </div>
-        <Button variant="default" className="bg-primary hover:bg-primary/90" asChild>
+        {downloadUrl && (
           <a
             href={downloadUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="no-underline"
+            className="flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
           >
-            <Download className="mr-2 h-4 w-4" />
+            <Download className="h-4 w-4" />
             Download PDF
           </a>
-        </Button>
+        )}
       </div>
     </div>
   );

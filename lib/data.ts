@@ -1,4 +1,4 @@
-import { SubjectData } from './types';
+import { LabData, SubjectData } from './types';
 
 export const subjectsData: SubjectData = {
     "AP102": {
@@ -168,5 +168,116 @@ export const subjectsData: SubjectData = {
         "link": "https://drive.google.com/file/d/1hyqxOEkoH1x42lTMvo-7MghZP4Fwv8qp/view?usp=sharing",
         "cutoff": "till 2023",
         "semester": "6"
+    }
+};
+
+export const labData: LabData = {
+    "AC101": {
+        "name": "Applied Chemistry",
+        "link": "https://drive.google.com/file/d/1cMIAhJI4x7q24Vgv-IJjTbiBHzklROZa/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "1"
+    },
+    "AP101": {
+        "name": "Applied Physics",
+        "link": "https://drive.google.com/file/d/1XTZmIW1P4HqLAyLDl7GxtmLF-VMJnBqs/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "1"
+    },
+    "AP102": {
+        "name": "Applied Physics",
+        "link": "https://drive.google.com/file/d/16dRkm81L1DKgDheEGE-gZff7BERGISEm/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "2"
+    },
+    "CO101": {
+        "name": "Programming Fundamentals",
+        "link": "https://drive.google.com/file/d/1DHcNZA02laWH_Tzv_uir_DtvexQaKF6X/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "1"
+    },
+    "CO202": {
+        "name": "Database Management System",
+        "link": "https://drive.google.com/file/d/1WpHmk0dUxyXzkpyr_8D7WP_doecZVOwQ/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "4"
+    },
+    "CO203": {
+        "name": "Object Oriented Programming",
+        "link": "https://drive.google.com/file/d/1xhkAUmGWprOhRSM-hczEjSevPEejXPLE/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "3"
+    },
+    "CO204": {
+        "name": "Operating System Design",
+        "link": "https://drive.google.com/file/d/1UCtQ5taZCCU0BYZ93uO_PAC6YF5sET3P/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "4"
+    },
+    "CO301": {
+        "name": "Software Engineering",
+        "link": "https://drive.google.com/file/d/1ND8ZblfGlftNVV2B_-ChCm6nfvP-_ADG/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "5"
+    },
+    "CO302": {
+        "name": "Compiler Design",
+        "link": "https://drive.google.com/file/d/16e0y5vvXI7QdvzjXocU2EW6QYMwarPsE/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "6"
+    },
+    "CO306": {
+        "name": "Computer Networks",
+        "link": "https://drive.google.com/file/d/19SVhJ3-kVU-WwZ_9OvxQia1n5wszYDQN/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "6"
+    },
+    "CO313": {
+        "name": "Computer Graphics",
+        "link": "https://drive.google.com/file/d/1zGcM_KnPvXbWR9DnlP5WoFQ8m_Uy6B6u/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "5"
+    },
+    "CO326": {
+        "name": "Object Oriented Software Engineering",
+        "link": "https://drive.google.com/file/d/15ET8wK6l9CSkCzkkaRNXG04qBzEoTgwl/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "6"
+    },
+    "CO427": {
+        "name": "Web Technology",
+        "link": "https://drive.google.com/file/d/1LVZEOk6LYOadA5b8KeJFL3JHWmmWQTL0/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "7"
+    },
+    "CO433": {
+        "name": "Distributed Systems",
+        "link": "https://drive.google.com/file/d/1Ilaox1V8rNjm-6kXJMh_GIMCtI5PqnBS/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "7"
+    },
+    "EC261": {
+        "name": "Analog Electronics",
+        "link": "https://drive.google.com/file/d/1vN8uUIzHu5haHjo0wyPKYKD6KP8dm2W8/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "3"
+    },
+    "EC262": {
+        "name": "Digital Electronics",
+        "link": "https://drive.google.com/file/d/1wQN00Lje8uib4U90SjD7LQfD6Bc0AbtJ/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "4"
+    },
+    "EC262P": {
+        "name": "Digital Electronics",
+        "link": "https://drive.google.com/file/d/1GRMo5xYBs0mXBZi3bKKLePdHYzKnUwHo/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "4"
+    },
+    "ME103": {
+        "name": "Workshop Practice",
+        "link": "https://drive.google.com/file/d/1-dbPdW8G3RTRmVhQkBZkoCaJ9SYzgpkC/view?usp=drive_link",
+        "type": "lab manual",
+        "semester": "1"
     }
 };

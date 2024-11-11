@@ -1,25 +1,24 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import { FileText, GraduationCap } from "lucide-react";
+import { FileText, GraduationCap, Beaker } from "lucide-react";
 import { GroupedSubjects } from "@/lib/types";
 
 interface SubjectListProps {
   groupedSubjects: GroupedSubjects;
   selectedSubject: string | null;
   onSubjectSelect: (code: string) => void;
+  type: 'pyq' | 'lab';
 }
 
-export function SubjectList({ groupedSubjects, selectedSubject, onSubjectSelect }: SubjectListProps) {
+export function SubjectList({ groupedSubjects, selectedSubject, onSubjectSelect, type }: SubjectListProps) {
   const semesters = Object.keys(groupedSubjects).sort();
 
   if (semesters.length === 0) {
     return (
       <div className="h-full flex flex-col items-center justify-center text-muted-foreground">
         <GraduationCap className="h-12 w-12 mb-4 opacity-50" />
-        <p>No subjects found</p>
+        <p>No {type === 'pyq' ? 'subjects' : 'lab manuals'} found</p>
       </div>
     );
   }
@@ -34,25 +33,33 @@ export function SubjectList({ groupedSubjects, selectedSubject, onSubjectSelect 
             </h2>
             <div className="space-y-2">
               {groupedSubjects[semester].map(({ code, name }) => (
-                <Button
+                <button
                   key={code}
-                  variant={selectedSubject === code ? "default" : "secondary"}
-                  className={`w-full justify-start transition-colors p-2.5 h-auto ${selectedSubject === code
-                    ? "bg-primary hover:bg-primary/90"
-                    : "hover:bg-secondary/80"
-                    }`}
+                  className={`w-full flex items-start gap-2 p-3 rounded-md transition-colors ${
+                    selectedSubject === code
+                      ? 'bg-primary text-white'
+                      : 'bg-secondary hover:bg-secondary/80'
+                  }`}
                   onClick={() => onSubjectSelect(code)}
                 >
-                  <FileText className="mr-2 h-4 w-4" />
+                  {type === 'pyq' ? (
+                    <FileText className="h-4 w-4 mt-1" />
+                  ) : (
+                    <Beaker className="h-4 w-4 mt-1" />
+                  )}
                   <div className="text-left">
                     <div className="font-medium">{code}</div>
-                    <div className="text-sm text-muted-foreground truncate">{name}</div>
+                    <div className={`text-sm ${
+                      selectedSubject === code ? 'text-white/70' : 'text-muted-foreground'
+                    } truncate`}>
+                      {name}
+                    </div>
                   </div>
-                </Button>
+                </button>
               ))}
             </div>
             {semester !== semesters[semesters.length - 1] && (
-              <Separator className="mt-4" />
+              <div className="h-px bg-border my-4" />
             )}
           </div>
         ))}
