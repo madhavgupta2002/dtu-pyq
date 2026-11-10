@@ -19,7 +19,7 @@ export function SearchBar({ value, onChange, onDepartmentChange }: SearchBarProp
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Search by name or code..."
-          className="w-full pl-9 pr-4 py-2 rounded-md border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full pl-9 pr-4 py-2 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
         />
       </div>
       <div className="flex gap-2">

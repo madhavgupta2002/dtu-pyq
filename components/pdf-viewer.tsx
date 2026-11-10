@@ -28,7 +28,7 @@ export function PDFViewer({ subject, type }: PDFViewerProps) {
 
   return (
     <div className="h-[calc(100vh-270px)] flex flex-col sm:px-24">
-      <div className="flex-grow bg-background rounded-lg overflow-hidden border">
+      <div className="grow bg-background rounded-lg overflow-hidden border">
         {embedUrl ? (
           <iframe
             src={embedUrl}

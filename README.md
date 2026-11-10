@@ -1,6 +1,13 @@
 # DTU PYQ Solutions
 
-A modern web application that provides easy access to Delhi Technological University's Previous Year Question (PYQ) solutions. Access it at [dtu-pyq.vercel.app](https://dtu-pyq.vercel.app)
+> [!IMPORTANT]
+> **This site has moved.** The PYQ collection is now hosted on D.Tech at
+> **[dtech2021.vercel.app/pyq](https://dtech2021.vercel.app/pyq)**.
+>
+> `dtu-pyq.vercel.app` redirects there permanently (308 via `vercel.json`, with an
+> in-page fallback in `app/layout.tsx`). This repository is kept for reference.
+
+A modern web application that provides easy access to Delhi Technological University's Previous Year Question (PYQ) solutions.
 
 
 ![image](https://github.com/user-attachments/assets/ec47b41a-1575-456e-89fe-8b75a66cd231)

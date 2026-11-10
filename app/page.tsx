@@ -7,7 +7,8 @@ import { SearchBar } from "@/components/search-bar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { subjectsData, labData } from "@/lib/data";
 import { GroupedSubjects } from "@/lib/types";
-import { BookOpen, Linkedin, Beaker } from "lucide-react";
+import { BookOpen, Beaker } from "lucide-react";
+import { LinkedinIcon } from "@/components/icons/linkedin";
 
 export default function Home() {
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
@@ -50,7 +51,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background px-4 sm:px-40">
-      <header className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="border-b border-border/40 bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-4">
             <div className="flex items-center gap-2">
@@ -66,7 +67,7 @@ export default function Home() {
               >
                 <span className="hidden sm:inline">Made by Madhav Gupta</span>
                 <span className="sm:hidden">Madhav Gupta</span>
-                <Linkedin className="h-4 w-4" />
+                <LinkedinIcon className="h-4 w-4" />
               </a>
               <ThemeToggle />
             </div>
